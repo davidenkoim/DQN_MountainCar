@@ -1,11 +1,11 @@
 import gym
-from hw02_lunar_lander.agent import Agent
+from .agent import Agent
 
 ag = Agent('agent-120.pkl')
 env = gym.make('MountainCar-v0')
-# env.seed(24)
 
 def avr_reward(ag, env, n=20):
+    """Counting average score"""
     avr_r = 0
     for _ in range(n):
         state = env.reset()
@@ -20,6 +20,7 @@ def avr_reward(ag, env, n=20):
 
 print(avr_reward(ag, env))
 
+# You can see how car climbs the hill
 state = env.reset()
 reward = 0
 done = False
